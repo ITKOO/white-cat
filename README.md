@@ -2,13 +2,13 @@
 
 Meet Winter (겨울), my white cat! I wanted to see Winter every time I opened my laptop, so I made this little desktop pet for Codex. Feel free to download Winter and let this little cat keep you company!
 
-<p align="center">
-  <img src="./preview.png" alt="Winter the white pixel-art cat in idle, waving, and jumping poses" width="668">
-</p>
+| Winter in motion |
+| :---: |
+| <img src="./preview.png" alt="Winter the white pixel-art cat in idle, waving, and jumping poses" width="668"> |
 
-## Install
+## Install and choose Winter
 
-With Node.js installed, ask Codex to run this command, or run it in your terminal:
+With Node.js installed, ask Codex to run this command in the ChatGPT desktop app.
 
 ```sh
 npx codex-pets add white-cat
@@ -16,21 +16,13 @@ npx codex-pets add white-cat
 
 When the command finishes, look for `Installed Winter (겨울) the White Cat (white-cat)`.
 
-You can also open [Winter’s gallery listing](https://codex-pets.net/share/white-cat) and select **Install in Codex** to open a chat with the install command ready to send.
-
-<p align="center">
-  <img src="./gallery-install.png" alt="Screenshot of Winter’s gallery listing with red boxes around Install in Codex and the terminal command" width="660">
-</p>
-
-## Choose Winter in Codex
-
-1. After the command finishes, open the profile menu in the desktop app and choose **Settings**.
-2. In the Settings sidebar, select **Mini & Pets**.
-3. Click the **Refresh** button next to **My pets**. **Winter (겨울) the White Cat** will appear in the list. Select the card to use Winter.
-
-<p align="center">
-  <img src="./install-guide.png" alt="Codex screenshots with red boxes around Settings, Mini &amp; Pets, Refresh, and the Winter card" width="760">
-</p>
+| Screenshot | What to do |
+| :---: | :--- |
+| <img src="./gallery-install.png" alt="Gallery install button and terminal command outlined in red" width="320"> | **1. Download and install Winter**<br><br>On the **Codex Pets website**, open [Winter’s listing](https://codex-pets.net/share/white-cat) and click **Download sprite kit** to save the package.<br><br>In the **ChatGPT desktop app**, switch to **Codex**, open a chat, and ask Codex to run `npx codex-pets add white-cat`. The website’s **Install in Codex** button opens a chat with the command ready to send. |
+| <img src="./codex-settings-menu.png" alt="Settings outlined in red in the Codex profile menu" width="340"> | **2. Open Settings**<br><br>Once Codex finishes installing Winter, open the profile menu in the **ChatGPT desktop app** and select **Settings**. |
+| <img src="./codex-mini-and-pets.png" alt="Mini &amp; Pets outlined in red in the Settings sidebar" width="340"> | **3. Go to Mini &amp; Pets**<br><br>In the **Settings** sidebar, select **Mini &amp; Pets**. |
+| <img src="./codex-refresh.png" alt="Refresh icon outlined in red next to Create pet" width="290"> | **4. Refresh the pet list**<br><br>On the **Mini &amp; Pets** page, find **My pets** and click the **Refresh** icon next to **Create pet**.<br><br>**Winter (겨울) the White Cat** will appear in the list. |
+| <img src="./codex-select-winter.png" alt="Winter’s pet card outlined in red" width="320"> | **5. Select Winter**<br><br>In the **My pets** list, select **Winter (겨울) the White Cat** to use Winter. |
 
 Enter `/pet` in a Codex chat to show Winter on your desktop. See the [official Pets guide](https://learn.chatgpt.com/docs/pets) for more details.
 
