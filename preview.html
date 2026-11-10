@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Winter (겨울) the White Cat preview</title>
+<style>
+  :root { --bg: #f4f4f2; --fg: #222; --panel: #fff; --line: #d8d8d4; }
+  body.dark { --bg: #1e1f22; --fg: #e8e8e6; --panel: #2a2b2f; --line: #3c3d42; }
+  body.blue { --bg: #789fc8; --fg: #10202f; --panel: #86abd1; --line: #5f88b3; }
+  body.white { --bg: #ffffff; --fg: #222; --panel: #ffffff; --line: #e6e6e6; }
+  body { margin: 0; padding: 24px 16px 48px; background: var(--bg); color: var(--fg);
+         font: 14px/1.5 -apple-system, "Apple SD Gothic Neo", sans-serif; }
+  h1 { font-size: 18px; margin: 0 0 16px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-bottom: 24px; }
+  .bar label { display: flex; gap: 8px; align-items: center; }
+  button { font: inherit; color: var(--fg); background: var(--panel); border: 1px solid var(--line);
+           border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+  button[aria-pressed="true"] { outline: 2px solid var(--fg); }
+  .grid { display: flex; flex-wrap: wrap; gap: 16px; }
+  figure { margin: 0; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; text-align: center; }
+  figcaption { margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .box { overflow: hidden; }
+  .sprite { width: 192px; height: 208px; background: url(spritesheet.webp) no-repeat; transform-origin: 0 0; }
+</style>
+</head>
+<body>
+<h1>Winter (겨울) the White Cat · 상태별 미리보기</h1>
+<div class="bar">
+  <span>배경
+    <button data-bg="" aria-pressed="true">밝음</button>
+    <button data-bg="white">흰색</button>
+    <button data-bg="dark">어두움</button>
+    <button data-bg="blue">파랑</button>
+  </span>
+  <label>프레임 간격 <input id="speed" type="range" min="60" max="400" step="10" value="140"> <span id="speedv">140ms</span></label>
+  <label>크기 <input id="scale" type="range" min="0.5" max="2" step="0.25" value="1"> <span id="scalev">1x</span></label>
+</div>
+<div class="grid" id="grid"></div>
+<script>
+const W = 192, H = 208;
+const STATES = [["Idle", 6], ["Run right", 8], ["Run left", 8], ["Waving", 4], ["Jumping", 5],
+                ["Failed", 8], ["Waiting", 6], ["Running", 6], ["Review", 6]];
+const grid = document.getElementById("grid");
+const sprites = STATES.map(([name, n], row) => {
+  const fig = document.createElement("figure");
+  fig.innerHTML = `<div class="box"><div class="sprite"></div></div><figcaption>${name} · ${n}f</figcaption>`;
+  grid.appendChild(fig);
+  return { el: fig.querySelector(".sprite"), box: fig.querySelector(".box"), n, row };
+});
+let tick = 0, timer;
+function draw() {
+  for (const s of sprites) s.el.style.backgroundPosition = `${-(tick % s.n) * W}px ${-s.row * H}px`;
+  tick++;
+}
+function setSpeed(ms) {
+  clearInterval(timer); timer = setInterval(draw, ms);
+  document.getElementById("speedv").textContent = ms + "ms";
+}
+function setScale(k) {
+  for (const s of sprites) {
+    s.el.style.transform = `scale(${k})`;
+    s.box.style.width = W * k + "px"; s.box.style.height = H * k + "px";
+  }
+  document.getElementById("scalev").textContent = k + "x";
+}
+document.getElementById("speed").oninput = e => setSpeed(+e.target.value);
+document.getElementById("scale").oninput = e => setScale(+e.target.value);
+document.querySelectorAll("[data-bg]").forEach(b => b.onclick = () => {
+  document.body.className = b.dataset.bg;
+  document.querySelectorAll("[data-bg]").forEach(x => x.setAttribute("aria-pressed", x === b));
+});
+draw(); setSpeed(140); setScale(1);
+</script>
+</body>
+</html>
