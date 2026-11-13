@@ -32,6 +32,29 @@ Download or clone this repository and open [`preview.html`](./preview.html) in y
 
 The pet package includes [`pet.json`](./pet.json) for the metadata and [`spritesheet.webp`](./spritesheet.webp) for the animation frames.
 
+## Meet Kkamangi and Eollugi
+
+Winter now has two friends! **Kkamangi (까망이) the Black Cat** in [`black-cat/`](./black-cat/) is a sleek black cat, and **Eollugi (얼룩이) the Calico Cat** in [`calico-cat/`](./calico-cat/) is a calico cat.
+
+| Kkamangi in motion |
+| :---: |
+| <img src="./black-cat/preview.png" alt="Kkamangi the black pixel-art cat in idle, waving, and jumping poses" width="668"> |
+
+| Eollugi in motion |
+| :---: |
+| <img src="./calico-cat/preview.png" alt="Eollugi the calico pixel-art cat in idle, waving, and jumping poses" width="668"> |
+
+Kkamangi and Eollugi are not on the Codex Pets website yet, so install them manually. Download or clone this repository and copy the pet’s folder into your Codex pets directory, `${CODEX_HOME:-$HOME/.codex}/pets/<id>/`.
+
+```sh
+cp -R black-cat ~/.codex/pets/
+cp -R calico-cat ~/.codex/pets/
+```
+
+Then, in the **ChatGPT desktop app**, open **Settings** &gt; **Mini &amp; Pets**, click the **Refresh** icon next to **Create pet**, and select **Kkamangi (까망이) the Black Cat** or **Eollugi (얼룩이) the Calico Cat**.
+
+To preview the animations, open each folder’s `preview.html` ([`black-cat/preview.html`](./black-cat/preview.html), [`calico-cat/preview.html`](./calico-cat/preview.html)) in your browser.
+
 ## Contributors
 
 - [@ninetybullets](https://github.com/ninetybullets)
